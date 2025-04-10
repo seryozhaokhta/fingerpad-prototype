@@ -8,27 +8,32 @@ const grid = document.getElementById('pad-grid');
 
 /**
  * Отрисовывает пэды на гриде.
- * @param {Array} map - Массив с настройками пэдов.
+ * Каждый пэд получает класс по методологии БЭМ,
+ * устанавливается CSS‑переменная --active-bg для активного состояния,
+ * и прослушивается событие pointerdown.
+ * 
+ * @param {Array} map - Массив настроек пэдов.
  */
 function renderPads(map) {
     grid.innerHTML = '';
     map.forEach((pad, index) => {
         const btn = document.createElement('button');
-        btn.className = 'pad';
+        // Используем правильное именование по БЭМ
+        btn.classList.add('fingerpad__pad');
         btn.textContent = pad.label;
-        btn.style.backgroundColor = '#333';
         btn.dataset.index = index;
-        btn.dataset.color = pad.color;
+        // Задаём CSS-переменную для активного цвета
+        btn.style.setProperty('--active-bg', pad.color);
 
-        // Используем событие pointerdown для лучшей поддержки multi-touch
+        // Обработка события для поддержки multi-touch
         btn.addEventListener('pointerdown', (e) => {
-            // Предотвращаем стандартное поведение (например, зум)
             e.preventDefault();
             playSound(pad.sound);
-            btn.style.backgroundColor = pad.color;
-            // Возвращаем цвет через 200 мс
+            // Добавляем класс активного состояния,
+            // который изменяет фон на значение из --active-bg
+            btn.classList.add('fingerpad__pad--active');
             setTimeout(() => {
-                btn.style.backgroundColor = '#333';
+                btn.classList.remove('fingerpad__pad--active');
             }, 200);
         });
 

@@ -1,75 +1,161 @@
+/* CSS-переменные */
+:root {
+  --color-bg: #111;
+  --color-dark: #000;
+  --color-light: #fff;
+  --color-accent: #333;
+
+  /* Переменные для кнопок тулбара */
+  --color-button-bg: #444;
+  --color-button-fg: #fff;
+
+  /* Переменные для пэдов */
+  --color-pad-bg: #333;
+  --color-pad-fg: #fff;
+
+  --transition-speed: 50ms;
+  --border-color: #222;
+}
+
+/* Общие сбросы и базовые настройки */
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: #111;
-  color: white;
+  background: var(--color-bg);
+  color: var(--color-light);
   font-family: sans-serif;
-  -webkit-user-select: none;
-  user-select: none;
+  box-sizing: border-box;
 }
 
-body {
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Основной блок приложения */
+.fingerpad {
   display: flex;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 /* Заголовок */
-h1 {
+.fingerpad__header {
+  background: var(--color-dark);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.fingerpad__title {
   text-align: center;
   font-size: 1.2rem;
   padding: 0.5rem;
   margin: 0;
-  background: #000;
-  border-bottom: 1px solid #222;
 }
 
-/* Горизонтальный тулбар */
-#toolbar {
+/* Тулбар */
+.fingerpad__toolbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #222;
-  padding: 0.5rem 1rem;
-  gap: 1rem;
+  background: var(--color-accent);
+  padding: 0.5rem;
+  gap: 0.5rem;
 }
 
-.toolbar-item {
+.fingerpad__toolbar-item {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-/* Стили для грида с кнопками */
-.grid {
+.fingerpad__label {
+  color: var(--color-light);
+}
+
+/* Инпуты и слайдеры */
+.fingerpad__input,
+.fingerpad__slider {
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: none;
+}
+
+/* Кнопки тулбара */
+.fingerpad__button {
+  background-color: var(--color-button-bg);
+  color: var(--color-button-fg);
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+  transform: translateZ(0);
+  will-change: background-color;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.fingerpad__button:active {
+  filter: brightness(1.5);
+}
+
+/* Грид пэдов */
+.fingerpad__grid {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   gap: 0.5rem;
-  padding: 1rem;
-  box-sizing: border-box;
+  padding: 0;
+  margin: 10px;
 }
 
 /* Кнопки-пэды */
-button.pad {
+.fingerpad__pad {
   width: 100%;
   height: 100%;
-  border: none;
-  border-radius: 12px;
-  background-color: #333;
-  color: white;
+  background-color: var(--color-pad-bg);
+  color: var(--color-pad-fg);
   font-size: 1rem;
   font-weight: bold;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.1s ease;
-  /* Запрещаем нежелательные жесты, чтобы избежать зума */
+  transition: background-color var(--transition-speed) ease;
+  transform: translateZ(0);
+  will-change: background-color;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
-button.pad:active {
+/* Активное состояние пэда через класс */
+.fingerpad__pad--active {
+  background-color: var(--active-bg);
+}
+
+/* Дополнительный эффект нажатия (опционально) */
+.fingerpad__pad:active {
   filter: brightness(1.5);
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 600px) {
+  .fingerpad__toolbar {
+    flex-direction: column;
+  }
+
+  .fingerpad__title {
+    font-size: 1rem;
+  }
 }

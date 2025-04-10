@@ -10,28 +10,48 @@
     />
     <title>Finger Pad Prototype</title>
 
+    <!-- Стили -->
     <link rel="stylesheet" href="./src/style.css" />
 
-    <!-- Подключаем Howler глобально (UMD), без type="module" -->
+    <!-- Подключаем Howler глобально (UMD) -->
     <script src="https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.min.js"></script>
   </head>
-  <body>
-    <h1>Finger Pad Prototype</h1>
+  <body class="fingerpad">
+    <header class="fingerpad__header">
+      <h1 class="fingerpad__title">Finger Pad Prototype</h1>
+    </header>
 
-    <!-- Горизонтальный тулбар с настройками -->
-    <div id="toolbar">
-      <div class="toolbar-item">
-        <label for="bpm">BPM:</label>
-        <input type="number" id="bpm" min="40" max="300" value="90" />
-        <input type="range" id="bpm-slider" min="40" max="300" value="90" />
-        <button id="toggleMetronome">Start Metronome</button>
+    <div class="fingerpad__toolbar">
+      <div class="fingerpad__toolbar-item">
+        <label for="bpm" class="fingerpad__label">BPM:</label>
+        <input
+          type="number"
+          id="bpm"
+          class="fingerpad__input"
+          min="40"
+          max="300"
+          value="90"
+        />
+        <input
+          type="range"
+          id="bpm-slider"
+          class="fingerpad__slider"
+          min="40"
+          max="300"
+          value="90"
+        />
+        <button id="toggleMetronome" class="fingerpad__button">
+          Start Metronome
+        </button>
       </div>
-      <div class="toolbar-item">
-        <button id="toggleDragDrop">Enable Drag &amp; Drop</button>
+      <div class="fingerpad__toolbar-item">
+        <button id="toggleDragDrop" class="fingerpad__button">
+          Enable Drag &amp; Drop
+        </button>
       </div>
     </div>
 
-    <div id="pad-grid" class="grid"></div>
+    <main class="fingerpad__grid" id="pad-grid"></main>
 
     <!-- Наш главный скрипт (ES-модуль) -->
     <script type="module" src="./src/app.js"></script>
