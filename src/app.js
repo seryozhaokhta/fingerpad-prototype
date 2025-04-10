@@ -19,11 +19,19 @@ function renderPads(map) {
         btn.style.backgroundColor = '#333';
         btn.dataset.index = index;
         btn.dataset.color = pad.color;
-        btn.onclick = () => {
+
+        // Используем событие pointerdown для лучшей поддержки multi-touch
+        btn.addEventListener('pointerdown', (e) => {
+            // Предотвращаем стандартное поведение (например, зум)
+            e.preventDefault();
             playSound(pad.sound);
             btn.style.backgroundColor = pad.color;
-            setTimeout(() => (btn.style.backgroundColor = '#333'), 200);
-        };
+            // Возвращаем цвет через 200 мс
+            setTimeout(() => {
+                btn.style.backgroundColor = '#333';
+            }, 200);
+        });
+
         grid.appendChild(btn);
     });
 }

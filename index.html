@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- Поддержка мобильного веб-приложения для iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"
     />
-    <title>Finger Pad</title>
+    <title>Finger Pad Prototype</title>
     <link rel="stylesheet" href="./src/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <!-- Удалён подключаемый скрипт Sortable, так как он импортируется как модуль -->
   </head>
   <body>
     <h1>Finger Pad Prototype</h1>
@@ -22,7 +24,7 @@
         <button id="toggleMetronome">Start Metronome</button>
       </div>
       <div class="toolbar-item">
-        <button id="toggleDragDrop">Enable Drag & Drop</button>
+        <button id="toggleDragDrop">Enable Drag &amp; Drop</button>
       </div>
     </div>
 

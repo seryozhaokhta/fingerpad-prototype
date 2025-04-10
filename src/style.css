@@ -6,6 +6,8 @@ body {
   background: #111;
   color: white;
   font-family: sans-serif;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -63,6 +65,9 @@ button.pad {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.1s ease;
+  /* Запрещаем нежелательные жесты, чтобы избежать зума */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button.pad:active {
