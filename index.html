@@ -9,8 +9,11 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"
     />
     <title>Finger Pad Prototype</title>
+
     <link rel="stylesheet" href="./src/style.css" />
-    <!-- Удалён подключаемый скрипт Sortable, так как он импортируется как модуль -->
+
+    <!-- Подключаем Howler глобально (UMD), без type="module" -->
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.min.js"></script>
   </head>
   <body>
     <h1>Finger Pad Prototype</h1>
@@ -30,6 +33,7 @@
 
     <div id="pad-grid" class="grid"></div>
 
+    <!-- Наш главный скрипт (ES-модуль) -->
     <script type="module" src="./src/app.js"></script>
   </body>
 </html>

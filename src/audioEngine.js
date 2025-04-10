@@ -1,13 +1,12 @@
-import { Howl } from 'https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.core.js';
+// Забираем Howl из глобального объекта window
+const { Howl } = window;
 
 const soundCache = new Map();
 
 /**
  * Воспроизводит звук по заданному URL.
- * При первом вызове создаёт Howl-объект и кэширует его,
- * а затем при последующих вызовах переиспользует его.
- *
- * @param {string} url – URL аудиофайла.
+ * При первом вызове создаётся Howl и кэшируется,
+ * далее - переиспользуется, чтобы снизить задержки.
  */
 export function playSound(url) {
     let sound = soundCache.get(url);
@@ -15,10 +14,8 @@ export function playSound(url) {
         sound = new Howl({
             src: [url],
             preload: true,
-            // HTML5 Audio помогает снизить задержки на мобильных устройствах (особенно в iOS)
-            html5: true,
-            // Пул звука (опционально) – если хотите одновременное воспроизведение одного и того же звука без прерывания:
-            // pool: 5
+            html5: true, // чтобы снизить задержку на iOS
+            // pool: 5,   // если хотим многократно накладывать один и тот же звук
         });
         soundCache.set(url, sound);
     }
