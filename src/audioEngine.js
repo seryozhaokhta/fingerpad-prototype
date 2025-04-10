@@ -15,7 +15,7 @@ export function playSound(url) {
             src: [url],
             preload: true,
             html5: true, // чтобы снизить задержку на iOS
-            // pool: 5,   // если хотим многократно накладывать один и тот же звук
+            pool: 5,   // если хотим многократно накладывать один и тот же звук
         });
         soundCache.set(url, sound);
     }
