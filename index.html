@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"
+    />
+    <title>Finger Pad</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+  </head>
+  <body>
+    <h1>Finger Pad Prototype</h1>
+
+    <!-- Горизонтальный тулбар с настройками -->
+    <div id="toolbar">
+      <div class="toolbar-item">
+        <label for="bpm">BPM:</label>
+        <input type="number" id="bpm" min="40" max="300" value="90" />
+        <input type="range" id="bpm-slider" min="40" max="300" value="90" />
+        <button id="toggleMetronome">Start Metronome</button>
+      </div>
+      <div class="toolbar-item">
+        <button id="toggleDragDrop">Enable Drag & Drop</button>
+      </div>
+    </div>
+
+    <div id="pad-grid" class="grid"></div>
+
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
