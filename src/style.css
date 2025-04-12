@@ -35,6 +35,18 @@ body {
   box-sizing: inherit;
 }
 
+.configure-icon {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 2px;
+}
+
 /* Основной блок приложения */
 .fingerpad {
   display: flex;
@@ -158,4 +170,46 @@ body {
   .fingerpad__title {
     font-size: 1rem;
   }
+}
+
+/* Стили для модального окна файлового браузера */
+.modal {
+  z-index: 1000;
+}
+
+.file-tree ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.file-tree li {
+  color: #fff;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+.file-tree li.folder::before {
+  content: "📁 ";
+}
+
+.file-tree li.file::before {
+  content: "🎵 ";
+}
+
+.file-tree li.expanded > ul {
+  display: block;
+}
+
+.file-tree li > ul {
+  display: none;
+  margin-left: 15px;
+}
+
+.file-browser-container {
+  max-width: 300px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  padding: 10px;
 }

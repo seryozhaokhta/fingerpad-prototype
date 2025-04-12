@@ -1,44 +1,37 @@
+// src/app.js
 import { padMap } from './padMap.js';
 import { playSound } from './audioEngine.js';
 import { startMetronome, stopMetronome } from './metronome.js';
 import { enableDragDrop, disableDragDrop } from './dragDrop.js';
+import { startRhythm, stopRhythm, updateRhythm } from './rhythmEngine.js';
+import { enablePadConfigurationMode, disablePadConfigurationMode, isPadConfigurationModeEnabled } from './padConfigurator.js';
 
 let currentMap = [...padMap];
 const grid = document.getElementById('pad-grid');
 
-/**
- * Отрисовывает пэды на гриде.
- * Каждый пэд получает класс по методологии БЭМ,
- * устанавливается CSS‑переменная --active-bg для активного состояния,
- * и прослушивается событие pointerdown.
- * 
- * @param {Array} map - Массив настроек пэдов.
- */
 function renderPads(map) {
     grid.innerHTML = '';
     map.forEach((pad, index) => {
         const btn = document.createElement('button');
-        // Используем правильное именование по БЭМ
         btn.classList.add('fingerpad__pad');
         btn.textContent = pad.label;
         btn.dataset.index = index;
-        // Задаём CSS-переменную для активного цвета
         btn.style.setProperty('--active-bg', pad.color);
-
-        // Обработка события для поддержки multi-touch
+        // Убираем проверку режима конфигурации, чтобы пэд всегда воспроизводил звук при нажатии
         btn.addEventListener('pointerdown', (e) => {
             e.preventDefault();
             playSound(pad.sound);
-            // Добавляем класс активного состояния,
-            // который изменяет фон на значение из --active-bg
             btn.classList.add('fingerpad__pad--active');
             setTimeout(() => {
                 btn.classList.remove('fingerpad__pad--active');
             }, 200);
         });
-
         grid.appendChild(btn);
     });
+    // Если режим конфигурации активен – добавляем иконки
+    if (isPadConfigurationModeEnabled()) {
+        enablePadConfigurationMode(grid, currentMap, renderPads);
+    }
 }
 
 renderPads(currentMap);
@@ -72,6 +65,7 @@ function updateBpm(value) {
     if (metronomeRunning) {
         startMetronome(parseInt(value, 10));
     }
+    updateRhythm(parseInt(value, 10));
 }
 
 bpmInput.addEventListener('input', (e) => updateBpm(e.target.value));
@@ -88,3 +82,54 @@ toggleMetronomeButton.addEventListener('click', () => {
     }
     metronomeRunning = !metronomeRunning;
 });
+
+/* Блок управления ритмическими схемами */
+const toolbar = document.querySelector('.fingerpad__toolbar');
+
+const rhythmContainer = document.createElement('div');
+rhythmContainer.classList.add('fingerpad__toolbar-item');
+rhythmContainer.innerHTML = `
+  <label for="rhythmSelect" class="fingerpad__label">Ритм-схема:</label>
+  <select id="rhythmSelect" class="fingerpad__input">
+    <option value="">-- Выбрать --</option>
+    <option value="chainA">Chain A</option>
+    <option value="chainB">Chain B</option>
+    <option value="chainC">Chain C</option>
+  </select>
+  <button id="startRhythmBtn" class="fingerpad__button">Play Rhythm</button>
+  <button id="stopRhythmBtn" class="fingerpad__button">Stop Rhythm</button>
+`;
+toolbar.appendChild(rhythmContainer);
+
+const rhythmSelect = document.getElementById('rhythmSelect');
+const startRhythmBtn = document.getElementById('startRhythmBtn');
+const stopRhythmBtn = document.getElementById('stopRhythmBtn');
+
+startRhythmBtn.addEventListener('click', () => {
+    const scheme = rhythmSelect.value;
+    if (!scheme) {
+        console.warn('Ритмическая схема не выбрана');
+        return;
+    }
+    const bpmValue = parseInt(bpmInput.value, 10) || 90;
+    startRhythm(bpmValue, scheme);
+});
+
+stopRhythmBtn.addEventListener('click', () => {
+    stopRhythm();
+});
+
+/* Режим конфигурации пэдов */
+const configButton = document.createElement('button');
+configButton.textContent = 'Toggle Pad Config Mode';
+configButton.classList.add('fingerpad__button');
+configButton.addEventListener('click', () => {
+    if (!isPadConfigurationModeEnabled()) {
+        enablePadConfigurationMode(grid, currentMap, renderPads);
+        configButton.textContent = 'Disable Pad Config Mode';
+    } else {
+        disablePadConfigurationMode(grid);
+        configButton.textContent = 'Enable Pad Config Mode';
+    }
+});
+toolbar.appendChild(configButton);
