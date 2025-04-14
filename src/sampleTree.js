@@ -1,5 +1,3 @@
-// src/sampleTree.js
-
 export const sampleTree = [
     {
         name: "808s",
@@ -8,8 +6,22 @@ export const sampleTree = [
             { name: "Cymatics - Blaze 808 - C.wav" },
             { name: "Cymatics - Buffalo 808 - C.wav" },
             { name: "Cymatics - Cali 808 - C.wav" },
-            { name: "Cymatics - Crucial 808 - C.wav" }
-            // Добавьте оставшиеся файлы по необходимости...
+            { name: "Cymatics - Crucial 808 - C.wav" },
+            { name: "Cymatics - Driller 808 - C.wav" },
+            { name: "Cymatics - Flammy 808 - C.wav" },
+            { name: "Cymatics - Heater 808 - C.wav" },
+            { name: "Cymatics - Hummer 808 - C.wav" },
+            { name: "Cymatics - Just Enough 808 - C.wav" },
+            { name: "Cymatics - Kicker 808 - C.wav" },
+            { name: "Cymatics - Mozaic 808 - C.wav" },
+            { name: "Cymatics - Night 808 - C.wav" },
+            { name: "Cymatics - Quicktime 808 - C.wav" },
+            { name: "Cymatics - Sanitize 808 - C.wav" },
+            { name: "Cymatics - Short Thump 808 - C.wav" },
+            { name: "Cymatics - Slim Jim 808 - C.wav" },
+            { name: "Cymatics - Space Saucer 808 - C.wav" },
+            { name: "Cymatics - Static 808 - C.wav" },
+            { name: "Cymatics - Underworld 808 - C.wav" }
         ]
     },
     {
@@ -17,50 +29,305 @@ export const sampleTree = [
         children: [
             { name: "Cymatics - Airline Clap.wav" },
             { name: "Cymatics - Cable Clap.wav" },
-            { name: "Cymatics - Chain Link Clap.wav" }
-            // …
+            { name: "Cymatics - Chain Link Clap.wav" },
+            { name: "Cymatics - Champagne Clap.wav" },
+            { name: "Cymatics - Cream Clap.wav" },
+            { name: "Cymatics - Earth Clap.wav" },
+            { name: "Cymatics - Elevator Clap.wav" },
+            { name: "Cymatics - Fashion Clap.wav" },
+            { name: "Cymatics - Filtered Space Clap - C.wav" },
+            { name: "Cymatics - Hawk Clap.wav" },
+            { name: "Cymatics - Impact Clap.wav" },
+            { name: "Cymatics - Magic Clap.wav" },
+            { name: "Cymatics - Pepper Spray Clap.wav" },
+            { name: "Cymatics - Radio Clap.wav" },
+            { name: "Cymatics - Rimster Clap.wav" },
+            { name: "Cymatics - Room Service Clap.wav" },
+            { name: "Cymatics - Snappy Clap.wav" },
+            { name: "Cymatics - Spring Impact Clap.wav" },
+            { name: "Cymatics - Stack It Clap.wav" },
+            { name: "Cymatics - Steel Room Clap.wav" },
+            { name: "Cymatics - Toonie Clap.wav" }
         ]
     },
     {
         name: "Crashes",
         children: [
+            { name: "Cymatics - Behavior Crash.wav" },
             { name: "Cymatics - Blitz Crash.wav" },
             { name: "Cymatics - Cold Crash.wav" },
-            { name: "Cymatics - Fatal Crash.wav" }
-            // …
+            { name: "Cymatics - Crack Crash.wav" },
+            { name: "Cymatics - Fatal Crash.wav" },
+            { name: "Cymatics - Feedback Crash.wav" },
+            { name: "Cymatics - Flaws Crash.wav" },
+            { name: "Cymatics - Goat Crash.wav" },
+            { name: "Cymatics - Gravel Crash.wav" },
+            { name: "Cymatics - Honk Crash.wav" },
+            { name: "Cymatics - Length Crash.wav" },
+            { name: "Cymatics - Lizard Crash.wav" },
+            { name: "Cymatics - Math Crash.wav" },
+            { name: "Cymatics - Ninja Crash.wav" },
+            { name: "Cymatics - Reasons Crash.wav" },
+            { name: "Cymatics - Sandpaper Crash.wav" },
+            { name: "Cymatics - Thermonuclear Crash.wav" },
+            { name: "Cymatics - Warp Crash.wav" },
+            { name: "Cymatics - Weight Crash.wav" },
+            { name: "Cymatics - Wobbly Crash.wav" }
         ]
     },
     {
         name: "Hihats - Closed",
         children: [
             { name: "Cymatics - Airport Hihat.wav" },
-            { name: "Cymatics - Alpha Hihat.wav" }
-            // …
+            { name: "Cymatics - Alpha Hihat.wav" },
+            { name: "Cymatics - Arrow Hihat.wav" },
+            { name: "Cymatics - Crime Hihat.wav" },
+            { name: "Cymatics - Drama Hihat.wav" },
+            { name: "Cymatics - Filtered Hihat 1.wav" },
+            { name: "Cymatics - Filtered Hihat 2.wav" },
+            { name: "Cymatics - Filtered Hihat 3.wav" },
+            { name: "Cymatics - Filtered Hihat 4.wav" },
+            { name: "Cymatics - Filtered Hihat 5.wav" },
+            { name: "Cymatics - Gang Hihat.wav" },
+            { name: "Cymatics - Halftime Hihat 1.wav" },
+            { name: "Cymatics - Halftime Hihat 2.wav" },
+            { name: "Cymatics - Halftime Hihat 3.wav" },
+            { name: "Cymatics - Halftime Hihat 4.wav" },
+            { name: "Cymatics - Jackal Hihat.wav" },
+            { name: "Cymatics - Kingdom Hihat.wav" },
+            { name: "Cymatics - Metallic Hihat.wav" },
+            { name: "Cymatics - Militia Hihat.wav" },
+            { name: "Cymatics - Pesos Hihat.wav" },
+            { name: "Cymatics - Ratio Hihat.wav" },
+            { name: "Cymatics - Reverse Hihat 1.wav" },
+            { name: "Cymatics - Reverse Hihat 2.wav" },
+            { name: "Cymatics - Reverse Hihat 3.wav" },
+            { name: "Cymatics - Sharp Hihat.wav" },
+            { name: "Cymatics - Solar Hihat.wav" },
+            { name: "Cymatics - Underworld Hihat.wav" },
+            { name: "Cymatics - Valid Hihat.wav" }
         ]
     },
     {
         name: "Hihats - Open",
         children: [
             { name: "Cymatics - Burner Open Hihat.wav" },
-            { name: "Cymatics - Chunk Open Hihat.wav" }
-            // …
+            { name: "Cymatics - Chunk Open Hihat.wav" },
+            { name: "Cymatics - Fiat Open Hihat.wav" },
+            { name: "Cymatics - Nacho Open Hihat.wav" },
+            { name: "Cymatics - Payload Open Hihat.wav" },
+            { name: "Cymatics - Release Open Hihat.wav" },
+            { name: "Cymatics - Short Open Hihat.wav" },
+            { name: "Cymatics - Shortie Open Hihat.wav" },
+            { name: "Cymatics - Supreme Open Hihat.wav" },
+            { name: "Cymatics - Switzerland Open Hihat.wav" },
+            { name: "Cymatics - Taxin Open Hihat.wav" },
+            { name: "Cymatics - Tinder Open Hihat.wav" },
+            { name: "Cymatics - Two Step Open Hihat.wav" },
+            { name: "Cymatics - Winter Open Hihat.wav" }
         ]
     },
     {
         name: "Kicks",
         children: [
+            { name: "Cymatics - Blown Kick - F.wav" },
             { name: "Cymatics - Clean Kick - G.wav" },
-            { name: "Cymatics - Dynamic Kick - A.wav" }
-            // …
+            { name: "Cymatics - Dynamic Kick - A.wav" },
+            { name: "Cymatics - Erosion Kick - A.wav" },
+            { name: "Cymatics - Infection Kick - G.wav" },
+            { name: "Cymatics - Jagged Kick - G#.wav" },
+            { name: "Cymatics - Meat Kick - F.wav" },
+            { name: "Cymatics - Mercy Kick - D.wav" },
+            { name: "Cymatics - Nag Kick - G#.wav" },
+            { name: "Cymatics - Raid Kick - A.wav" },
+            { name: "Cymatics - Round Kick - F.wav" },
+            { name: "Cymatics - Shaq Kick - G.wav" },
+            { name: "Cymatics - Skin Stomp Kick - F#.wav" },
+            { name: "Cymatics - Small Funk Kick - A.wav" },
+            { name: "Cymatics - Soft Clip Kick - A.wav" },
+            { name: "Cymatics - Squad Kick - G.wav" },
+            { name: "Cymatics - Subtle Stomp Kick - F#.wav" },
+            { name: "Cymatics - Super Clip Kick 1 - G.wav" },
+            { name: "Cymatics - Super Clip Kick 2 - A.wav" },
+            { name: "Cymatics - Super Clip Kick 3 - A.wav" },
+            { name: "Cymatics - Sweden Kick - G#.wav" },
+            { name: "Cymatics - Thump Stomp Kick - F.wav" },
+            { name: "Cymatics - Twitter Kick - G#.wav" }
+        ]
+    },
+    {
+        name: "Percussion",
+        children: [
+            { name: "Cymatics - Bad Wolf Perc.wav" },
+            { name: "Cymatics - Bamboo Perc.wav" },
+            { name: "Cymatics - Banana Perc.wav" },
+            { name: "Cymatics - Bitcoin Perc.wav" },
+            { name: "Cymatics - Bravo Perc.wav" },
+            { name: "Cymatics - Bubble Perc.wav" },
+            { name: "Cymatics - Built Like This Perc.wav" },
+            { name: "Cymatics - Cash Perc.wav" },
+            { name: "Cymatics - Chase Perc.wav" },
+            { name: "Cymatics - Credit Perc.wav" },
+            { name: "Cymatics - Crunch Tom Perc.wav" },
+            { name: "Cymatics - Crunchwrap Perc.wav" },
+            { name: "Cymatics - Doublespeak Perc.wav" },
+            { name: "Cymatics - Dragon Perc.wav" },
+            { name: "Cymatics - Elephant Perc.wav" },
+            { name: "Cymatics - Evergreen Perc.wav" },
+            { name: "Cymatics - Filtered Cowbell Perc.wav" },
+            { name: "Cymatics - Filtered Perc 1.wav" },
+            { name: "Cymatics - Filtered Perc 2.wav" },
+            { name: "Cymatics - Filtered Perc 3.wav" },
+            { name: "Cymatics - Filtered Perc 4.wav" },
+            { name: "Cymatics - Filtered Perc 5.wav" },
+            { name: "Cymatics - Fish Tank Perc.wav" },
+            { name: "Cymatics - Garage Perc.wav" },
+            { name: "Cymatics - Gold Perc.wav" },
+            { name: "Cymatics - Hook Perc.wav" },
+            { name: "Cymatics - Hot Chocolate Perc.wav" },
+            { name: "Cymatics - Locked Perc 1.wav" },
+            { name: "Cymatics - Locked Perc 2.wav" },
+            { name: "Cymatics - Love Life Perc.wav" },
+            { name: "Cymatics - Machinery Perc.wav" },
+            { name: "Cymatics - Mafia Triangle Perc.wav" },
+            { name: "Cymatics - Metro Perc.wav" },
+            { name: "Cymatics - Miner Perc.wav" },
+            { name: "Cymatics - Old Ford Perc.wav" },
+            { name: "Cymatics - Ornament Perc.wav" },
+            { name: "Cymatics - Payoff Perc.wav" },
+            { name: "Cymatics - Pill Perc.wav" },
+            { name: "Cymatics - Ping Perc.wav" },
+            { name: "Cymatics - Plastic Perc.wav" },
+            { name: "Cymatics - Resampled Bongo Perc.wav" },
+            { name: "Cymatics - Rim Perc.wav" },
+            { name: "Cymatics - Ringer Perc.wav" },
+            { name: "Cymatics - Ringo Perc.wav" },
+            { name: "Cymatics - Shake It Perc.wav" },
+            { name: "Cymatics - Splicker Perc.wav" },
+            { name: "Cymatics - Steam Perc.wav" },
+            { name: "Cymatics - Sticky Perc.wav" },
+            { name: "Cymatics - Temple Perc.wav" },
+            { name: "Cymatics - Tin Can Perc.wav" },
+            { name: "Cymatics - Tube Perc.wav" },
+            { name: "Cymatics - Underwater Snare Perc.wav" },
+            { name: "Cymatics - Wave Perc.wav" },
+            { name: "Cymatics - Weird Tile Perc.wav" },
+            { name: "Cymatics - Wonder Tom Perc.wav" },
+            { name: "Cymatics - Woodblock Perc.wav" }
+        ]
+    },
+    {
+        name: "Rimshots",
+        children: [
+            { name: "Cymatics - Aerials Rimshot.wav" },
+            { name: "Cymatics - Attack Rimshot.wav" },
+            { name: "Cymatics - Brightness Rimshot.wav" },
+            { name: "Cymatics - Coiled Rimshot.wav" },
+            { name: "Cymatics - Galaxy Rimshot.wav" },
+            { name: "Cymatics - Ice Rimshot.wav" },
+            { name: "Cymatics - Omega Rimshot.wav" },
+            { name: "Cymatics - Orange Stick Rimshot.wav" },
+            { name: "Cymatics - Pluto Rimshot.wav" },
+            { name: "Cymatics - Rivals Rimshot.wav" },
+            { name: "Cymatics - Rum & Coke Rimshot.wav" },
+            { name: "Cymatics - Satin Rimshot.wav" },
+            { name: "Cymatics - Sigma Rimshot.wav" },
+            { name: "Cymatics - Snarify Rimshot.wav" },
+            { name: "Cymatics - Spring Rimshot.wav" },
+            { name: "Cymatics - Viral Rimshot.wav" },
+            { name: "Cymatics - Warble Rimshot.wav" },
+            { name: "Cymatics - Winter Rimshot.wav" }
         ]
     },
     {
         name: "Shakers",
         children: [
             { name: "Cymatics - Grain Shaker 1.wav" },
-            { name: "Cymatics - Rice Shaker.wav" }
-            // …
+            { name: "Cymatics - Grain Shaker 2.wav" },
+            { name: "Cymatics - Halftime Shaker.wav" },
+            { name: "Cymatics - Layers Shaker.wav" },
+            { name: "Cymatics - Pepper Shaker.wav" },
+            { name: "Cymatics - Popcorn Shaker 1.wav" },
+            { name: "Cymatics - Popcorn Shaker 2.wav" },
+            { name: "Cymatics - Popcorn Shaker 3.wav" },
+            { name: "Cymatics - Rice Shaker.wav" },
+            { name: "Cymatics - Salt Shaker 1.wav" },
+            { name: "Cymatics - Salt Shaker 2.wav" },
+            { name: "Cymatics - Salt Shaker 3.wav" },
+            { name: "Cymatics - Salt Shaker 4.wav" },
+            { name: "Cymatics - Stacked Up Shaker.wav" }
         ]
     },
-    // и так далее для остальных папок
+    {
+        name: "Snaps",
+        children: [
+            { name: "Cymatics - Dimmed Snap.wav" },
+            { name: "Cymatics - Federal Snap.wav" },
+            { name: "Cymatics - Formant Snap.wav" },
+            { name: "Cymatics - Fruit Snap.wav" },
+            { name: "Cymatics - Hallway Snap.wav" },
+            { name: "Cymatics - Hauntology Snap.wav" },
+            { name: "Cymatics - Hornet Snap.wav" },
+            { name: "Cymatics - Ice Mountain Snap.wav" },
+            { name: "Cymatics - Opaque Snap.wav" },
+            { name: "Cymatics - Personality Snap.wav" },
+            { name: "Cymatics - Reef Snap.wav" },
+            { name: "Cymatics - Scientist Snap.wav" }
+        ]
+    },
+    {
+        name: "Snares",
+        children: [
+            { name: "Cymatics - Asset Snare - G.wav" },
+            { name: "Cymatics - Bank Snare 1 - E.wav" },
+            { name: "Cymatics - Bank Snare 2 - E.wav" },
+            { name: "Cymatics - Booty Snare - D#.wav" },
+            { name: "Cymatics - Chihuahua Snare - C#.wav" },
+            { name: "Cymatics - Chunky Bop Snare - C#.wav" },
+            { name: "Cymatics - Circuit Snare - A#.wav" },
+            { name: "Cymatics - Filtered Snare 1 - A.wav" },
+            { name: "Cymatics - Filtered Snare 2 - D.wav" },
+            { name: "Cymatics - Filtered Snare 3 - E.wav" },
+            { name: "Cymatics - Halftime Snare - A#.wav" },
+            { name: "Cymatics - Iconic Snare - F#.wav" },
+            { name: "Cymatics - Klopp Snare - A#.wav" },
+            { name: "Cymatics - Narc Snare - C.wav" },
+            { name: "Cymatics - Natural Snare - G#.wav" },
+            { name: "Cymatics - Optics Snare - F#.wav" },
+            { name: "Cymatics - Rapid Fire Snare - A#.wav" },
+            { name: "Cymatics - Rebirth Snare - F#.wav" },
+            { name: "Cymatics - Rifle Snare - G.wav" },
+            { name: "Cymatics - Spearhead Snare - F#.wav" },
+            { name: "Cymatics - Submarine Snare - E.wav" },
+            { name: "Cymatics - Take Care Snare - D.wav" },
+            { name: "Cymatics - Travis Snare - G#.wav" },
+            { name: "Cymatics - Triangulate Snare - A#.wav" }
+        ]
+    },
+    {
+        name: "Vocals",
+        children: [
+            { name: "ShortVocal.wav" }
+        ]
+    },
+    {
+        name: "Vox",
+        children: [
+            { name: "Cymatics - Bathroom Chant.wav" },
+            { name: "Cymatics - Breath Vox.wav" },
+            { name: "Cymatics - Bruh Vox.wav" },
+            { name: "Cymatics - Crushed Who Vox High.wav" },
+            { name: "Cymatics - Crushed Who Vox Low.wav" },
+            { name: "Cymatics - Hey Chant 1.wav" },
+            { name: "Cymatics - Hey Chant 2.wav" },
+            { name: "Cymatics - High Pitched Yo.wav" },
+            { name: "Cymatics - Low Pitched Yo.wav" },
+            { name: "Cymatics - Oh Chant - G#.wav" },
+            { name: "Cymatics - Slice Vox.wav" },
+            { name: "Cymatics - Spring Chant.wav" },
+            { name: "Cymatics - Werewolf Vox.wav" },
+            { name: "Cymatics - What Vox.wav" },
+            { name: "Cymatics - Yea Chant.wav" }
+        ]
+    }
 ];

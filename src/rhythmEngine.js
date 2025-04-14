@@ -1,5 +1,3 @@
-// src/rhythmEngine.js
-
 import { playSound } from './audioEngine.js';
 import { padMap } from './padMap.js';
 

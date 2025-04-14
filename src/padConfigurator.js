@@ -1,10 +1,33 @@
-// src/padConfigurator.js
-
 import { createFileTree } from './padFileBrowser.js';
 import { sampleTree } from './sampleTree.js';
 
 let configModeEnabled = false;
 let modal = null;
+
+// Функция для парсинга пути выбранного файла и формирования данных для пэда
+function parseFilePath(filePath) {
+    // Ожидаемый формат: "Kicks/Cymatics - Clean Kick - G.wav"
+    const parts = filePath.split('/');
+    const folderName = parts[0];
+    const fileName = parts[1];
+    // Убираем расширение
+    let baseName = fileName.replace(/\.wav$/i, '');
+    // Убираем префикс "Cymatics - ", если он имеется
+    baseName = baseName.replace(/^Cymatics\s*-\s*/i, '');
+    // Определяем тип инструмента по папке
+    const mapping = {
+        'Kicks': 'KICK',
+        'Snares': 'SNARE',
+        'Hihats - Closed': 'HIHAT',
+        'Hihats - Open': 'OPEN HAT',
+        'Claps': 'CLAP',
+        'Crashes': 'CRASH',
+        '808s': '808',
+        'Shakers': 'SHAKER'
+    };
+    const instrumentType = mapping[folderName] || folderName.toUpperCase();
+    return { instrumentType, sampleName: baseName };
+}
 
 export function enablePadConfigurationMode(gridElement, currentMap, renderPads) {
     configModeEnabled = true;
@@ -25,7 +48,11 @@ export function enablePadConfigurationMode(gridElement, currentMap, renderPads) 
             openFileBrowser(newFilePath => {
                 if (newFilePath) {
                     // Формируем путь относительно корня
-                    currentMap[padIndex].sound = "./Drum_One_Shots/" + newFilePath;
+                    const fullPath = "./Drum_One_Shots/" + newFilePath;
+                    const parsed = parseFilePath(newFilePath);
+                    currentMap[padIndex].sound = fullPath;
+                    currentMap[padIndex].instrumentType = parsed.instrumentType;
+                    currentMap[padIndex].sampleName = parsed.sampleName;
                     renderPads(currentMap);
                 }
             });

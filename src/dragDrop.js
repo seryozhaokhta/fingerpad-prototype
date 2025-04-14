@@ -1,6 +1,5 @@
 import Sortable from 'https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/modular/sortable.esm.js';
 
-
 let sortableInstance = null;
 
 /**

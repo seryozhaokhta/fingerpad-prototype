@@ -1,4 +1,3 @@
-// src/app.js
 import { padMap } from './padMap.js';
 import { playSound } from './audioEngine.js';
 import { startMetronome, stopMetronome } from './metronome.js';
@@ -14,10 +13,13 @@ function renderPads(map) {
     map.forEach((pad, index) => {
         const btn = document.createElement('button');
         btn.classList.add('fingerpad__pad');
-        btn.textContent = pad.label;
         btn.dataset.index = index;
         btn.style.setProperty('--active-bg', pad.color);
-        // Убираем проверку режима конфигурации, чтобы пэд всегда воспроизводил звук при нажатии
+        btn.innerHTML = `
+            <div class="instrument-type">${pad.instrumentType}</div>
+            <div class="sample-name">${pad.sampleName}</div>
+        `;
+        // Воспроизведение звука при нажатии
         btn.addEventListener('pointerdown', (e) => {
             e.preventDefault();
             playSound(pad.sound);

@@ -1,5 +1,3 @@
-// src/padFileBrowser.js
-
 export function createFileTree(treeData, onSelect) {
     const container = document.createElement('div');
     container.classList.add('file-tree');
